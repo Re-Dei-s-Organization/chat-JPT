@@ -1,10 +1,10 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background: url(../public/walp.jpg);
+  background: #fff;
   color: #212121;
   font-family: "Open Sans", sans-serif;
-  display: flex;
+  display: grid;
   place-items: center;
 }
 body {
@@ -12,61 +12,38 @@ body {
   padding: 0%;
 }
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
 .joinChatContainer {
-  margin: 0 auto;
-  margin-top: -10em;
-  width: 35%;
-  height: 45%;
-  padding: 1em;
   display: flex;
   flex-direction: column;
-  row-gap: 1em;
-  background-color: #dfcfcf;
-  border-radius: 1em;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-.joinChatContainer h1 {
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 1em;
-  border-radius: 0.4em;
-  height: 25px;
-  background: #0d6b9a;
-  position: relative;
-  padding: 0.6em;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-  font-size: 1.5em;
-  color: #fff;
-  font-weight: 700;
+.joinChatContainer h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 .joinChatContainer input {
+  width: 210px;
   height: 40px;
-  margin: 8px;
+  margin: 7px;
   border: 2px solid #43a047;
-  border-radius: 10px;
-  padding: 0.5em;
-  font-size: 1em;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
 }
 
 .joinChatContainer button {
-  width: 40%;
+  width: 225px;
   height: 50px;
-  margin: 0 auto;
-  margin-top: 0.2em;
+  margin: 7px;
   border: none;
-  border-radius: 10px;
-  padding: 0.5em;
-  font-size: 1.5em;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
   background: #43a047;
   color: #fff;
   cursor: pointer;
-  font-weight: 700;
-  letter-spacing: 0.1em;
 }
 
 .joinChatContainer button:hover {
@@ -74,53 +51,34 @@ body {
 }
 
 .chat-window {
-  margin: 0 auto;
-  width: 50%;
-  height: 75%;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5em;
-  background-color: #dfcfcf;
-  border-radius: 2em;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: 420px;
 }
 
+.chat-window p {
+  margin: 0;
+}
 .chat-window .chat-header {
-  border-radius: 0.8em;
   height: 45px;
-  background: #0d6b9a;
+  border-radius: 6px;
+  background: #263238;
   position: relative;
   cursor: pointer;
-  padding: 0.5em;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
-.chat-window .chat-header h1 {
+.chat-window .chat-header p {
+  display: block;
+  padding: 0 1em 0 2em;
   color: #fff;
   font-weight: 700;
   line-height: 45px;
 }
-.chat-window .chat-header .chat-icon
-{
-  color: rgb(243, 249, 248);
-  position: absolute;
-  left: 8em;
-  top: 0.4em;
-}
 
 .chat-window .chat-body {
-  padding: 0.6em;
-  height: 75%;
-  border: none;
-  border-radius: 0.8em;
+  height: calc(450px - (45px + 70px));
+  border: 1px solid #263238;
   background: #fff;
+
   position: relative;
-  box-shadow: 2px 2px 5px rgba(65, 63, 63, 0.8);
 }
 .chat-window .chat-body .message-container {
   width: 100%;
@@ -142,13 +100,16 @@ body {
   width: auto;
   height: auto;
   min-height: 40px;
-  max-width: 100%;
+  max-width: 120px;
   background-color: #43a047;
-  border-radius: 0.8em;
-  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  color: white;
   display: flex;
   align-items: center;
-  padding: 0.1em;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
   overflow-wrap: break-word;
   word-break: break-word;
 }
@@ -158,13 +119,12 @@ body {
 }
 
 #you .message-content {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 #you .message-meta {
-  margin-top: -0.5em;
   justify-content: flex-start;
-  color: rgb(18, 38, 151);
+  margin-left: 5px;
 }
 
 #other {
@@ -172,14 +132,13 @@ body {
 }
 
 #other .message-content {
-  justify-content: center;
-  background-color: rgb(29, 92, 207);
+  justify-content: flex-end;
+  background-color: cornflowerblue;
 }
 
 #other .message-meta {
-  margin-top: -0.5em;
   justify-content: flex-end;
-  color: rgb(1, 1, 1);
+  margin-right: 5px;
 }
 
 .message-meta #author {
@@ -189,17 +148,13 @@ body {
 
 .chat-window .chat-body .message .message-meta {
   display: flex;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .chat-window .chat-footer {
-  padding: 0.6em;
-  border: none;
-  border-radius: 0.8em;
-  background: #fff;
-  position: relative;
-  box-shadow: 2px 2px 5px rgba(65, 63, 63, 0.8);
-  height: 26px;
+  height: 40px;
+  border: 1px solid #263238;
+  border-top: none;
   display: flex;
 }
 
@@ -209,24 +164,28 @@ body {
   border: 0;
   padding: 0 0.7em;
   font-size: 1em;
-  border-right: 1px dotted #010101;
+  border-right: 1px dotted #607d8b;
+
   outline: none;
   font-family: "Open Sans", sans-serif;
 }
 
 .chat-window .chat-footer button {
-  border: none;
-  display: flex;
-  flex: 8%;
+  border: 0;
+  display: grid;
   place-items: center;
   cursor: pointer;
+  flex: 15%;
   height: 100%;
   background: transparent;
   outline: none;
-  font-size: 30px;
+  font-size: 25px;
   color: lightgray;
 }
 
 .chat-window .chat-footer button:hover {
   color: #43a047;
+}
+.hide {
+  opacity: 0 !important;
 }

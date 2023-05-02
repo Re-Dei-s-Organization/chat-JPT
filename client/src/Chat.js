@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
-import {BsChatDotsFill} from "react-icons/bs";
-import {MdSend} from "react-icons/md";
 
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
@@ -34,7 +32,7 @@ function Chat({ socket, username, room }) {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <h1><BsChatDotsFill className="chat-icon"/>Live Chat</h1>
+        <p>Live Chat</p>
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
@@ -62,7 +60,7 @@ function Chat({ socket, username, room }) {
         <input
           type="text"
           value={currentMessage}
-          placeholder="Aa"
+          placeholder="Hey..."
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
@@ -70,7 +68,7 @@ function Chat({ socket, username, room }) {
             event.key === "Enter" && sendMessage();
           }}
         />
-        <button onClick={sendMessage}><MdSend /></button>
+        <button onClick={sendMessage}>&#9658;</button>
       </div>
     </div>
   );
