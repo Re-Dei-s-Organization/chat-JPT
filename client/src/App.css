@@ -230,3 +230,7 @@ body {
 .chat-window .chat-footer button:hover {
   color: #43a047;
 }
+
+p{
+  padding: 0em 1em;
+}
