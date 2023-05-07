@@ -7,12 +7,21 @@ app.use(cors());
 
 const server = http.createServer(app);
 
+/* port */
+let PORT = process.env.PORT||5000;
+
+console.log(`Running on port: ${ PORT }`)
+
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
+
+server.listen(PORT,() => {
+  console.log("SERVER RUNNING");
+})
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
@@ -29,8 +38,4 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User Disconnected", socket.id);
   });
-});
-
-server.listen(3001, () => {
-  console.log("SERVER RUNNING");
 });
